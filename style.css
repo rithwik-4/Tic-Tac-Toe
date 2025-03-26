@@ -1,0 +1,323 @@
+body{
+    background-image: url("background-img.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Montserrat Alternates", sans-serif;
+}
+
+.fa-o{
+    color: #18a3bc;
+}
+
+.fa-x{
+    color: #139128;
+}
+
+.display-score{
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.score-box {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 10px 20px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 120px; /* Adjust width as needed */
+}
+
+.user1-score {
+    color: #139128; /* Color for Player 1 */
+}
+
+.user2-score {
+    color: #18a3bc; /* Color for Player 2 */
+}
+
+.draw-score {
+    color: #f40707; /* Color for Draw */
+}
+
+.restart{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.restart .start-new-game-btn{
+    border: 2px solid #e22f2f;
+    color: #00ff2a;
+}
+
+.restart .start-new-game-btn::before{
+    background: #00ff2a;
+}
+.start-new-game-btn:hover {
+    color: #111;
+}
+input::placeholder,input{
+    color: black;
+    font-weight: 600;
+}
+
+form{
+    display: flex;
+    gap:20px;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+h1{
+    color: white;
+    font-size: 60px;
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 24px;
+}
+
+.outer-div{
+    margin: 0px auto;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 350px;
+    height: 350px;
+    gap: 4px;
+    position: relative;
+}
+
+i{
+    font-size: 48px;
+    color: black;
+}
+
+.inner-div{
+    height: 90px;
+    width: 90px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 0px 8px rgb(45, 146, 68);
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.animation{
+    height: 350px;
+    position: absolute;
+    width: 4px;
+    background-color: black;
+    box-shadow: 0px 0px 5px rgb(192, 71, 178);
+    border-radius: 8px;
+    display: none;
+}
+
+.ani-one{
+    display: block;
+    height: 500px;
+    transform:translate(175px,-75px) rotate(-45deg);
+}
+
+.ani-two{
+    display: block;
+    height: 500px;
+    transform:translate(175px,-75px) rotate(45deg);
+
+}
+.ani-three{
+    display: block;
+    transform:translate(172px,-118px)  rotate(-90deg);
+}
+
+.ani-four{
+    display: block;
+    transform:translate(172px)  rotate(-90deg);
+}
+
+.ani-five{
+    display: block;
+    transform:translate(172px, 118px)  rotate(-90deg);
+}
+
+.ani-six{
+    display: block;
+    transform: translateX(56px);
+}
+
+.ani-seven{
+    display: block;
+    transform: translateX(174px);
+}
+
+.ani-eight{
+    display: block;
+    transform: translateX(292px);
+}
+
+#turn,#result{
+    text-align: center;
+    font-size: 24px;
+    text-align: center;
+    color: rgb(113, 14, 80);
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+
+button {
+    padding: 0.8em 1.8em;
+    border: 2px solid #ff0000;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: .3s;
+    z-index: 1;
+    font-family: inherit;
+    color: #1614ac;
+    font-weight: 900;
+    border-radius: 5px;
+   }
+   
+   button::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #56cec4;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+   }
+   
+   button:hover::before {
+    width: 105%;
+   }
+   
+   button:hover {
+    color: #4b0082;
+   }
+   
+
+
+.input {
+    max-width: 190px;
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .input:valid {
+    border-color: #00ff2a;
+    box-shadow: 2px 2px 8px 1px #00ff2a;
+  }
+  
+  .input:invalid {
+    border-color: #ff4d4d;
+    color: #000;
+    box-shadow: 2px 2px 8px 1px rgba(255, 77, 77, 0.8);
+  }
+
+ @media(max-width:640px){
+    form{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+ }
+
+ @media(max-width:400px){
+    h1{
+        font-size: 48px;
+    }
+    .display-score{
+        font-size: 16px;
+        font-weight: 500;
+    }
+    #result{
+        font-size: 20px;
+    }
+    .outer-div{
+        height: 300px;
+        width: 300px;
+    }
+    .inner-div{
+        height: 70px;
+        width: 70px;
+    }
+    i{
+        font-size: 40px;
+    }
+    .animation{
+        height: 300px;
+    }
+    
+    .ani-six{
+        display: block;
+        transform: translateX(48px);
+    }
+    .ani-seven{
+        display: block;
+        transform: translateX(149px);
+    }
+    .ani-eight{
+        display: block;
+        transform: translateX(251px);
+    }
+    .ani-three{
+        display: block;
+        transform:translate(150px,-102px)  rotate(-90deg);
+    }
+    .ani-four{
+        display: block;
+        transform:translate(150px)  rotate(-90deg);
+    }
+    .ani-five{
+        display: block;
+        transform:translate(150px, 102px)  rotate(-90deg);
+    }
+    .ani-one{
+        display: block;
+        height: 420px;
+        transform:translate(150px,-60px) rotate(-45deg);
+    }
+    .ani-two{
+        display: block;
+        height: 420px;
+        transform:translate(150px,-60px) rotate(45deg);
+    }
+ }
+
+.copyrights{
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(225, 225, 225, 0.1);
+    text-align: center;
+    color: #f8f8ff;
+    font-size: 0.9rem;
+}
